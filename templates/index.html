@@ -1,17 +1,16 @@
 {% extends 'bootstrap/base.html' %}
-{% block styles %}
-{{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-{% endblock %}
 
 {% block title %}Recipe Randomizer{% endblock %}
 
 {% block content %}
-<div class="jumbotron text-center">
+{% include "header.html" %}
+
+<div style="background-color: white" class="jumbotron text-center">
     <div class="container">
-      <h1 class="display-4">Get your random recipe!</h1>
-      <a class="btn btn-warning btn-lg" role="button">Show Me!</a>
+      <h2 class="display-4">Get your random recipe!</h2>
+      <a class="btn btn-warning btn-lg" href="{{ url_for('recipe') }}" role="button">Show Me!</a>
     </div>
 </div>
 
+{% include "footer.html" %}
 {% endblock %}

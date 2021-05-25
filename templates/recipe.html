@@ -1,0 +1,25 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Recipe{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="container my-5">
+	<div class="row p-4 align-items-center shadow-lg rounded-3 border">
+		Ingredients
+	</div>
+</div>
+
+<div class="container my-5">
+	<div class="row p-4 align-items-center shadow-lg rounded-3 border">
+		Instructions
+	</div>
+</div>
+
+<div class="container text-center">
+	<a class="btn btn-warning btn-lg" href="{{ url_for('recipe') }}" role="button">Re-randomize Recipe</a>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}
