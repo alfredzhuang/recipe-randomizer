@@ -29,7 +29,10 @@ def get_recipe():
             break
         else:
             ingredients.append(data["meals"][0]["strMeasure" + str(i)] + " " + data["meals"][0]["strIngredient" + str(i)])
-    instructions = data["meals"][0]["strInstructions"].encode('latin-1', 'replace').decode('latin-1')
+    instructions = data["meals"][0]["strInstructions"]
+    instructions = instructions.replace(u'\u2013', '-')
+    instructions = instructions.replace(u'\u2014', '-')
+    instructions = instructions.replace(u'\u2019', "'")
 
 
 @app.route("/")
