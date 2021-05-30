@@ -48,7 +48,7 @@ def recipe():
         pdf.add_page()
         pdf.set_font("Arial", size=12)
         pdf.multi_cell(0, 5, txt=instructions, align="C")
-        pdf.output("instructions.pdf")
+        pdf.output(name="instructions.pdf")
         return render_template('recipe.html', name=name, category=category, area=area, ingredients=ingredients, instructions=instructions)
     get_recipe()
     return render_template('recipe.html', name=name, category=category, area=area, ingredients=ingredients, instructions=instructions)

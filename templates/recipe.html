@@ -6,20 +6,21 @@
 {% include "header.html" %}
 
 <div class="container my-5">
-	<div class="row p-4 align-items-center shadow-lg rounded-3 border">
+	<div class="col p-4 align-items-center shadow-lg rounded-3 border">
 		{% for ingredient in ingredients %}
 		<p>{{ ingredient }}</p>
-		<hr>
 		{% endfor %}
 	</div>
 </div>
 
 <div class="container my-5">
-	<div class="row p-4 align-items-center shadow-lg rounded-3 border">
-		{{ instructions }}
-		<form name="instructionPDF" id="PDF" action="{{ url_for('recipe') }}" method="post" novalidate>
-			<button type="submit" class="btn btn-primary" id="instructionPDFButton">Download PDF</button>
-		</form>
+	<div class="col p-4 align-items-center shadow-lg rounded-3 border">
+		<p>{{ instructions }}</p>
+		<div class="my-3">
+			<form name="instructionPDF" id="PDF" action="{{ url_for('recipe') }}" method="post" novalidate>
+				<button type="submit" class="btn btn-primary" id="instructionPDFButton">Download PDF</button>
+			</form>
+		</div>
 	</div>
 </div>
 
