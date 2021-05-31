@@ -10,6 +10,11 @@
 		{% for ingredient in ingredients %}
 		<p>{{ ingredient }}</p>
 		{% endfor %}
+		<div class="my-3">
+			<form name="add-to-cart" id="add-to-cart" action="{{ url_for('add_to_cart') }}" method="post" novalidate>
+				<button type="submit" class="btn btn-primary" id="addToCartButton">Purchase Ingredients</button>
+			</form>
+		</div>
 	</div>
 </div>
 
