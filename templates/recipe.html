@@ -1,0 +1,37 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Recipe{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="container my-5">
+	<div class="col p-4 align-items-center shadow-lg rounded-3 border">
+		{% for ingredient in ingredients %}
+		<p>{{ ingredient }}</p>
+		{% endfor %}
+		<div class="my-3">
+			<form name="add-to-cart" id="add-to-cart" action="{{ url_for('add_to_cart') }}" method="post" novalidate>
+				<button type="submit" class="btn btn-primary" id="addToCartButton">Purchase Ingredients</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container my-5">
+	<div class="col p-4 align-items-center shadow-lg rounded-3 border">
+		<p>{{ instructions }}</p>
+		<div class="my-3">
+			<form name="instructionPDF" id="PDF" action="{{ url_for('recipe') }}" method="post" novalidate>
+				<button type="submit" class="btn btn-primary" id="instructionPDFButton">Download PDF</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container text-center">
+	<a class="btn btn-warning btn-lg" href="{{ url_for('recipe') }}" role="button">Re-randomize Recipe</a>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}
