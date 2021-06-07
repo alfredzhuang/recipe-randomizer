@@ -5,8 +5,18 @@
 {% block content %}
 {% include "header.html" %}
 
+<div class="container mt-5 text-center">
+	<h2>
+		{{ category }}
+	</h2>
+	<h1>
+		{{ name }} ({{ area }})
+	</h1>
+</div>
+
 <div class="container my-5">
 	<div class="col p-4 align-items-center shadow-lg rounded-3 border">
+		<h3>Ingredients:</h3>
 		{% for ingredient in ingredients %}
 		<p>{{ ingredient }}</p>
 		{% endfor %}
@@ -20,6 +30,7 @@
 
 <div class="container my-5">
 	<div class="col p-4 align-items-center shadow-lg rounded-3 border">
+		<h3>Instructions:</h3>
 		<p>{{ instructions }}</p>
 		<div class="my-3">
 			<form name="instructionPDF" id="PDF" action="{{ url_for('recipe') }}" method="post" novalidate>
