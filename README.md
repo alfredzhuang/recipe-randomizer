@@ -1,5 +1,9 @@
 <h1 align="center">Recipe Randomizer</h1>
 This website generates a random recipe for the user and automates the process of adding ingredients to a cart (Walmart Grocery) or downloading instructions as a pdf.
+<p></p>
+<p align="center">
+  <img src="/images/reciperandomizer.jpg">
+</p>
   
 ## How it Works
 The random recipe is generated using TheMealDB API <br>
